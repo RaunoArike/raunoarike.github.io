@@ -6,7 +6,7 @@ tags:
   - collection
 ---
 
-This is a list of books and essays that I'd particularly recommend or that have had a formative impact on me.
+This is a list of books and essays that I've especially liked or that have otherwise had a strong impact on me.
 
 ## Books
 
@@ -15,8 +15,6 @@ Edmonds, *Parfit*
 Pinker, *The Better Angels of Our Nature*
 
 Pinker, *The Sense of Style*
-
-Pinker, *The Language Instinct*
 
 Buzsáki, *The Brain from Inside Out*
 
@@ -46,8 +44,6 @@ MacAskill, *Doing Good Better*
 
 Kahneman, *Thinking, Fast and Slow*
 
-Meadows, *Thinking in Systems*
-
 Harari, *Sapiens*
 
 Bostrom, *Superintelligence*
@@ -55,8 +51,6 @@ Bostrom, *Superintelligence*
 Feynman, *Surely You're Joking, Mr. Feynman!*
 
 Isaacson, *Steve Jobs*
-
-Frankl, *Man's Search for Meaning*
 
 Hawking, *A Brief History of Time*
 
@@ -67,8 +61,6 @@ Hašek, *The Good Soldier Švejk*
 Yudkowsky, *Rationality: A-Z*
 
 Yudkowsky, *Harry Potter and the Methods of Rationality*
-
-Tolkien, *The Hobbit*
 
 Tolkien, *The Lord of the Rings*
 
