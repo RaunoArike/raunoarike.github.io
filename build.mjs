@@ -96,6 +96,15 @@ function mdToHtml(src) {
   html = html.replace(/<img([^>]*?)\ssrc="(?!https?:|\/)([^"]+)"/g, (_, attrs, src) => {
     return `<img${attrs} src="/img/${src.replace(/^(\.\/)?img\//, "")}"`
   })
+  // Process inline markdown links inside <figcaption> tags (marked treats raw HTML blocks as opaque).
+  html = html.replace(/<figcaption>([\s\S]*?)<\/figcaption>/g, (_, inner) => {
+    const converted = inner.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, url) => {
+      const isExternal = /^https?:\/\//.test(url)
+      const attrs = isExternal ? ' target="_blank" rel="noopener noreferrer"' : ""
+      return `<a href="${url}"${attrs}>${text}</a>`
+    })
+    return `<figcaption>${converted}</figcaption>`
+  })
   // Rewrite local markdown links: foo.md -> /foo, "foo" (no ext) stays as-is if matches a slug.
   html = html.replace(/<a([^>]*?)\shref="(?!https?:|#|mailto:|\/)([^"]+)"/g, (m, attrs, href) => {
     const cleaned = href.replace(/\.md$/, "")
@@ -119,7 +128,7 @@ function readContent() {
       title: fm.title || slug,
       date: fm.date ? new Date(fm.date) : null,
       tags: fm.tags || [],
-      external_url: fm.external_url || null,
+      external_url: fm.external_url ? (/^https?:\/\//.test(fm.external_url) ? fm.external_url : `https://${fm.external_url}`) : null,
       authors: fm.authors || "",
       venue: fm.venue || "",
       description: fm.description || "",
@@ -157,7 +166,6 @@ ${extraHead}
   <a class="site-title" href="/">${SITE_TITLE}</a>
   <nav class="site-nav">
     <a href="/blog">Blog</a>
-    <a href="/books">Books</a>
     <button id="theme-toggle" aria-label="Toggle theme">◑</button>
   </nav>
 </header>
@@ -230,7 +238,7 @@ function renderList(title, items, { external = false } = {}) {
 
 function renderAbout() {
   return `<section class="about">
-  <p>Hi, I'm Rauno. I'm managing director and researcher at <a href="https://aether-ai-research.org/">Aether</a>, an AI safety research org currently working on chain-of-thought monitorability. Before that, I completed an undergrad in CS at TU Delft, where I co-founded the <a href="https://www.delftaisafety.org/">Delft AI Safety Initiative</a>, and did a research fellowship at the <a href="https://www.matsprogram.org/">MATS program</a>.</p>
+  <p>Hi, I'm Rauno. I'm managing director and researcher at <a href="https://aether-ai-research.org/">Aether</a>, an AI safety research org currently working on LLM chain-of-thought monitorability. Before that, I completed an undergrad in CS at TU Delft, where I co-founded the <a href="https://www.delftaisafety.org/">Delft AI Safety Initiative</a>, and did a research fellowship at the <a href="https://www.matsprogram.org/">MATS program</a>.</p>
   <p class="socials">
     <a href="mailto:rauno.arike@gmail.com">Email</a>
     <a href="https://www.lesswrong.com/users/rauno-arike">LessWrong</a>
@@ -290,13 +298,13 @@ function renderHome(pages) {
   const has = (p, tag) => (p.tags || []).includes(tag)
   const papers = pages.filter((p) => has(p, "paper")).sort(byDateDesc)
   const blogPosts = pages
-    .filter((p) => (has(p, "essay") || has(p, "collection")) && !p.external_url)
+    .filter((p) => has(p, "essay") || has(p, "collection") || has(p, "research"))
     .sort(byDateDesc)
 
   const body = `
 ${renderAbout()}
 ${renderPapers(papers)}
-${renderList("Blog posts", blogPosts)}
+${renderList("Blog posts", blogPosts, { external: true })}
 ${renderTalks(TALKS)}`
   return layout({ title: SITE_TITLE, body, slug: "index" })
 }

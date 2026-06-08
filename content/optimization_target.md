@@ -25,7 +25,7 @@ However, the distinction becomes important in the paradigm of RL on pre-trained 
 
 In this setting, the distinction between the two interpretations becomes important because goals and rewards can become separate. For example, an agent might be very good at following the natural language instructions it’s given and coherently optimize for the goal it’s given through the system prompt over extremely long time horizons. Nevertheless, such an agent wouldn’t intrinsically care about the reward signal or get maximum reward (since, as an embedded agent, getting maximum reward would mean hijacking the reward channel, and hijacking the reward channel is almost certainly not what the natural language instructions tell the agent to do). In other words, it’s possible that reward is not the optimization target by the first interpretation (where optimizing for the reward means optimizing for the reward signal) and reward is the optimization target by the second interpretation (where optimizing for the reward means competent optimization of a single goal).
 
-I believe that in the RLPM setting, it’s relatively likely that reward becomes the optimization by the first interpretation, and relatively unlikely that it does by the second interpretation. The rest of my post will defend those two claims.[^3]
+I believe that in the RLPM setting, it’s relatively likely that reward becomes the optimization target by the first interpretation, and relatively unlikely that it does by the second interpretation. The rest of my post will defend those two claims.[^3]
 
 ## Claim 1: RLPM increases the likelihood that the model becomes a coherent optimizer
 

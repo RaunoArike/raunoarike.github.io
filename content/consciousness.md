@@ -7,6 +7,24 @@ tags:
   - philosophy
 ---
 
+Things to talk about:
+- Rafael Harth's two camps
+- functionalism vs physicalism and homomorphically encrypted WBEs
+- different flavors of illusionism (Dennett doesn't think there isn't anything to be explained, he mostly looks like a standard functionalist to me; Carl Feynman as an interesting case study; higher-order theories vs other possible types of functionalism)
+- to what degree can we trust introspection? (Descartes' cogito being insufficient to assert that consciousness is the thing one can be the most certain of; all introspection being unreliable is also a perverse view; introspection of what's happening in the current moment seems much more reliable than introspection of memories that were formed at a time when one wasn't introspecting (corollary: it's better to think about the question "why am I currently not feeling what my edge detector algorithm is doing in my visual cortex" rather than "why wasn't I feeling my shirt against my skin 3 minutes ago"))
+- related: problems with dualism (in Consciousness and its Place in Nature, Chalmers argues that interactionist property dualism (i.e. type-D dualism), neutral monism (i.e. type-F monism), epiphenomenalism (i.e. type-E dualism) as the options that sound plausible to him; discuss problems with each of these)
+- Karlsson's o3 and Kafka quote; qntm's Lena
+- why is an inner listener so central in Eliezer's thinking about consciousness?
+- Kaj Sotala's LLM consciousness post
+- be suspicious of thought experiments that ask you to imagine complex entities
+- why does Dennett think consciousness is a virtual machine? Is he right?
+- When we talk about LLMs being conscious, we should first agree on what the right level of analysis is. People usually assume by default that it's the weights, but there are many other possibilities: it could be a specific instance, the character simulated by the LLM, an entire LLM family, etc.
+- Yuxi on inverted qualia
+- What would happen if you were able to pay higher-order attention to sth outside the brain? Blindsight example
+- How much does instantiation matter? Can we read consciousness off from a bitstring representation of a 4D universe?
+
+- possible framing for the post as a whole: the four horsemen of consciousness disagreements: plausibility of p-zombies, fallibility of introspection, functionalism vs physicalism, ... Discuss where I land on each of these. If I go for this framing, I should probably leave discussion of LLM consciousness for a separate post
+
 I've discussed consciousness with a lot of people over the past year. While I'm under no delusions that yet another blog post on consciousness is unlikely to change anyone's mind, it seems useful to write up what I wish I'd known before having all these conversations. Furthermore, I've enjoyed reading [similar accounts of other people's intellectual journeys](https://www.lesswrong.com/posts/Ru2cDrre6D4gkf734/my-intellectual-journey-to-dis-solve-the-hard-problem-of) in the past. So, in that spirit, here's mine.
 
 ## Functionalism vs Physicalism
@@ -164,7 +182,7 @@ One argument against LLM consciousness goes as follows: "There was no selection 
 
 I dislike this argument because it has strong objections from both camp #1 and camp #2. A camp #1 representative who asserts that p-zombies can exist would say that a p-zombie wouldn't have any evolutionary disadvantage compared to a normal human, implying that there's no evolutionary pressure to be conscious rather than just act conscious. Camp #2 (and maybe also camp #1) representatives can say that it seems very much unclear whether consciousness is an evolved property at all. Daniel Dennett states the following hypothesis in *Consciousness Explained*:
 
-> Human consciousness is itself a huge complex of memes (or more exactly, meme-effects in brains) that can best be understood as the operation of a "von Neumannesque" virtual machine implemented in the parallel architecture of a brainthat was not designed for any such activities. The powers of this virtual machine vastly enhance the underlying powers of the organic hardware on which it runs, but at the same time many of its most curious features, and especially its limitations, can be explained as the byproducts of the kludges that make possible this curious but effective reuse of an existing organ for novel purposes.
+> Human consciousness is itself a huge complex of memes (or more exactly, meme-effects in brains) that can best be understood as the operation of a "von Neumannesque" virtual machine implemented in the parallel architecture of a brain that was not designed for any such activities. The powers of this virtual machine vastly enhance the underlying powers of the organic hardware on which it runs, but at the same time many of its most curious features, and especially its limitations, can be explained as the byproducts of the kludges that make possible this curious but effective reuse of an existing organ for novel purposes.
 
 Dennett has two reasons for viewing consciousness as software rather than biological hardware. First, conscious mental activity is extremely slow compared to most evolved cognitive processes. Second, the kind of sequential processing that we consciously perform emerged too late for it to be hardwired into our brains. The questions of whether this claim is correct and whether it encompasses phenomenal consciousness or only sequential metacognitive processing will have to wait for their own posts, but Dennett's hypothesis seems at least somewhat plausible to me.
 
