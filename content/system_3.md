@@ -2,6 +2,8 @@
 title: "On System 3 Thinking"
 draft: false
 date: 2025-11-05
+notes: ""
+category: misc
 tags:
   - essay
   - psychology
@@ -9,12 +11,7 @@ tags:
 
 > It's the most basic rule of the stymied researcher: *stop thinking about the problem*. Do something else. It will come to you if you just stop being *conscious* of it. ⸻ Peter Watts, *Blindsight*
 
-Daniel Kahneman famously defined System 1 and System 2 thinking in *Thinking, Fast and Slow* as follows:[^1]
-
-> *System 1* operates automatically and quickly, with little or no effort and no sense of voluntary control.
-> *System 2* allocates attention to the effortful mental activities that demand it, including complex computations. The operations of System 2 are often associated with the subjective experience of agency, choice, and concentration.
-
-While I initially found this a useful breakdown, I've started feeling that it doesn't quite capture the way I think over the past couple of years. When Amanda Askell [tweeted](https://x.com/AmandaAskell/status/1917644154966007956) about this, I immediately resonated with her breakdown:
+Amanda Askell recently [tweeted](https://x.com/AmandaAskell/status/1917644154966007956):
 
 > System 1 = fast, implicit reasoning
 >
@@ -24,11 +21,11 @@ While I initially found this a useful breakdown, I've started feeling that it do
 >
 > For me, system 3 is the real genius of the lot.
 
-This post will give a bunch of examples of what I mean when I talk about system 3 thinking. It isn't meant to carve reality at its joints—I don't think the system 1/2 distinction quite achieves that either—but rather to introduce an intuitive concept that I sometimes find useful.
+This tweet rings true to me, and I think that system 3 is a useful addition to [Daniel Kahneman's taxonomy](en.wikipedia.org/wiki/Thinking,_Fast_and_Slow#Two_systems).[^1] This post will discuss several anecdotes that illustrate why.
+
+## Mathematics
 
 In addition to Askell's breakdown, it will also be useful to keep Jacques Hadamard's definition of the same concept in mind throughout this post. In [*An Essay on the Psychology of Invention in the Mathematical Field*](https://ia600204.us.archive.org/26/items/eassayonthepsych006281mbp/eassayonthepsych006281mbp.pdf), he defines it as follows: system 3 insights appear (1) "without any relation to [one's] attempts of former days, so that it could not have been elaborated by [their] previous conscious work," and (2) "appeared without any time for thought, however brief".[^2]
-
-## Some anecdata from mathematicians
 
 Hadamard's book is ripe with examples of the phenomenon, making for a good starting point for this post. The first one comes from Henri Poincare. Hadamard recounts Poincare's attempt to form a theory of [Fuchsian groups](https://en.wikipedia.org/wiki/Fuchsian_group) and functions. Poincare started off with a futile attempt over a fortnight trying to prove that there could be no such functions. He eventually built up a class of these functions and wanted to find an expression for them. Here's what happened next, in Poincare's own words:
 
@@ -46,9 +43,7 @@ A final example comes from Hadamard's own experience, from when he grappled with
 
 > On being very abruptly awakened by an external noise, a solution long searched for appeared to me at once without the slightest instant of reflection on my part the fact was remarkable enough to have struck me unforgettably and in a quite different direction from any of those which I had previously tried to follow.
 
-Enough examples from math now. Let's move on to the arts.
-
-## Is there a similar phenomenon in arts?
+## Arts and music
 
 One of my favorite tales in musical history is the origin story of The Beatles's "Yesterday". In 1964, Paul McCartney woke up one morning with a complete melody in his head. It was so fully formed that he immediately went to a piano in the room and played it through, convinced he must have heard it somewhere before. McCartney then played the song to the other Beatles, Mick Jagger, George Martin, and other musical heavyweigths of the day, asking each of them whether they'd heard the song before. After a few weeks of blank stares, McCartney finally became convinced that the song is original.
 
@@ -100,13 +95,15 @@ The only example here that's remotely similar to Poincare's insights or the maki
 
 This seems unlikely to me for a few reasons. First, there's the incubation time. Gauss mentioned working on his proof for years before it instantaneously struck him—if it was just a matter of pattern-matching, why didn't the pattern fire right away? And second, all the examples here involve temporarily stepping away and leaving the problem aside, which shouldn't help with an instantaneous pattern-matching problem. This makes me inclined to consider system 3 thinking as a distinct category from systems 1 and 2.
 
-## Conclusion
+## Leveraging system 3 thinking
 
-Is Kahneman's and Tversky's taxonomy complete with the addition of system 3 thinking? I'm not convinced this is the case. There may well be a better breakdown that comes closer to carving reality at its joints. It does, however, seem clear that using system 3 as a mental category distinct from systems 1 and 2 helps one make useful predictions about productive habits of thought. Many of my productive friends are big fans of Paul Graham's [The Top Idea in Your Mind](https://paulgraham.com/top.html), which begins as follows:
+How can we leverage system 3 thinking for better ideas and higher productivity? I'll let Paul Graham [speak for myself](https://paulgraham.com/top.html):
 
-> Everyone who's worked on difficult problems is probably familiar with the phenomenon of working hard to figure something out, failing, and then suddenly seeing the answer a bit later while doing something else. There's a kind of thinking you do without trying to. I'm increasingly convinced this type of thinking is not merely helpful in solving hard problems, but necessary. The tricky part is, you can only control it indirectly.
+> I think most people have one top idea in their mind at any given time. That's the idea their thoughts will drift toward when they're allowed to drift freely. And this idea will thus tend to get all the benefit of that type of thinking, while others are starved of it. Which means it's a disaster to let the wrong idea become the top one in your mind.
 
-This, to me, looks like a clear instance of system 3 in action.
+> You can't directly control where your thoughts drift. If you're controlling them, they're not drifting. But you can control them indirectly, by controlling what situations you let yourself get into. That has been the lesson for me: be careful what you let become critical to you. Try to get yourself into situations where the most urgent problems are ones you want to think about.
+
+Graham's post takes the importance of system 3 thinking as a premise and provides excellent advice for productive thinking. I suggest that as your next stop after this post.
 
 [^1]: The terms are originally due to Keith Stanovich and Richard West. However, I refer to Kahneman as, to my knowledge, he's the one who introduced the terms into popular discussion.
 

@@ -2,6 +2,8 @@
 title: Links for Q4 2025
 draft: true
 date: 2026-03-29
+notes: ""
+category: links
 tags:
   - collection
   - links

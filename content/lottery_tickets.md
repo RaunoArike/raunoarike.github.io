@@ -2,6 +2,8 @@
 title: Exploring the Lottery Ticket Hypothesis
 draft: false
 date: 2023-04-25
+notes: ""
+category: ai-safety
 tags:
   - ai
   - research

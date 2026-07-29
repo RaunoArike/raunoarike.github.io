@@ -69,6 +69,7 @@ function slugifyHeading(text) {
   return text
     .toLowerCase()
     .replace(/<[^>]+>/g, "")
+    .replace(/&(?:#\d+|#x[0-9a-f]+|[a-z]+);/gi, "")
     .replace(/[^\w\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-")
@@ -127,6 +128,9 @@ function readContent() {
       slug,
       title: fm.title || slug,
       date: fm.date ? new Date(fm.date) : null,
+      categories: fm.category ? [].concat(fm.category) : [],
+      notes: fm.notes || "",
+      spotlight: fm.spotlight === true,
       tags: fm.tags || [],
       external_url: fm.external_url ? (/^https?:\/\//.test(fm.external_url) ? fm.external_url : `https://${fm.external_url}`) : null,
       authors: fm.authors || "",
@@ -183,20 +187,26 @@ function escapeHtml(s) {
 
 function fmtDate(d) {
   if (!d) return ""
-  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
+  // Frontmatter dates parse as UTC midnight; format in UTC so they don't shift a day.
+  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" })
 }
 
 function byDateDesc(a, b) {
   const ta = a.date ? a.date.getTime() : 0
   const tb = b.date ? b.date.getTime() : 0
-  return tb - ta
+  if (ta !== tb) return tb - ta
+  // Same-day posts (e.g. parts of a sequence published together): later slug first, so
+  // part 2 sits above part 1, matching the reverse-chronological order of the list.
+  return (b.slug || "").localeCompare(a.slug || "")
 }
 
 // ---------- page rendering ----------
 function renderToc(toc) {
   if (!toc.length) return ""
+  // t.text comes from rendered HTML with tags stripped, so it is already escaped —
+  // escaping again would print entities like &#39; literally.
   const items = toc.map((t) =>
-    `<li class="toc-${t.level}"><a href="#${t.id}">${escapeHtml(t.text)}</a></li>`
+    `<li class="toc-${t.level}"><a href="#${t.id}">${t.text}</a></li>`
   ).join("")
   return `<aside class="toc"><h3>Contents</h3><ul>${items}</ul></aside>`
 }
@@ -209,6 +219,7 @@ function renderContentPage(page) {
   <article class="post">
     <header class="post-header">
       <h1>${escapeHtml(page.title)}</h1>
+      ${page.notes ? `<p class="post-note">${escapeHtml(page.notes)}</p>` : ""}
       ${page.date ? `<p class="post-meta"><time datetime="${page.date.toISOString()}">${fmtDate(page.date)}</time>${page.tags.length ? " · " + page.tags.map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join(" ") : ""}</p>` : ""}
     </header>
     <div class="post-body">
@@ -220,7 +231,7 @@ ${html}
   return layout({ title: page.title, body, slug: page.slug })
 }
 
-function renderList(title, items, { external = false } = {}) {
+function renderList(title, items, { external = false, note = "" } = {}) {
   if (!items.length) return ""
   const lis = items.map((p) => {
     const href = external && p.external_url ? p.external_url : `/${p.slug}`
@@ -228,10 +239,12 @@ function renderList(title, items, { external = false } = {}) {
     return `<li>
       ${p.date ? `<span class="meta">${fmtDate(p.date)}</span>` : `<span class="meta"></span>`}
       <a href="${escapeHtml(href)}"${attrs}>${escapeHtml(p.title)}</a>
+      ${p.notes ? `<span class="note">${escapeHtml(p.notes)}</span>` : ""}
     </li>`
   }).join("\n")
   return `<section class="post-list">
     <h2>${escapeHtml(title)}</h2>
+    ${note ? `<p class="section-note">${escapeHtml(note)}</p>` : ""}
     <ul>${lis}</ul>
   </section>`
 }
@@ -281,6 +294,10 @@ const TALKS = [
     title: "AI Safety Thursdays: Chain-of-Thought Monitoring and AI Control",
     note: "together with Rohan Subramani",
   },
+  {
+    url: "https://www.youtube.com/watch?v=fLHtPUaXH8E",
+    title: "AI Safety Thursdays: Estimating No-CoT Task-Completion Time Horizons of Frontier AI Models",
+  },
 ]
 
 function renderTalks(talks) {
@@ -297,34 +314,66 @@ function renderTalks(talks) {
 function renderHome(pages) {
   const has = (p, tag) => (p.tags || []).includes(tag)
   const papers = pages.filter((p) => has(p, "paper")).sort(byDateDesc)
-  const blogPosts = pages
-    .filter((p) => has(p, "essay") || has(p, "collection") || has(p, "research"))
-    .sort(byDateDesc)
+  // The home page shows only the handful of posts marked `spotlight: true` in
+  // frontmatter; the full list lives on the blog page.
+  const blogPosts = pages.filter((p) => p.spotlight).sort(byDateDesc)
 
   const body = `
 ${renderAbout()}
 ${renderPapers(papers)}
-${renderList("Blog posts", blogPosts, { external: true })}
+${renderList("Blog spotlight", blogPosts, { external: true })}
 ${renderTalks(TALKS)}`
   return layout({ title: SITE_TITLE, body, slug: "index" })
 }
 
+// Columns of the blog index and the thematic categories within them, in display order.
+// Each post declares one or more categories in frontmatter; a post listed under several
+// categories appears in each of them.
+const BLOG_COLUMNS = [
+  {
+    title: "AI Alignment",
+    categories: [
+      { key: "cot-monitoring", title: "CoT Monitoring" },
+      {
+        key: "continual-learning",
+        title: "Continual Learning",
+        note: "all with Rohan Subramani, Owen Terry, Achu Menon, Zhijing Jin, Francis Rhys Ward, and Seth Herd",
+      },
+      { key: "character-training", title: "Character Training" },
+      { key: "ai-safety", title: "Misc AI Safety Writing" },
+    ],
+  },
+  {
+    title: "Other",
+    categories: [
+      { key: "philosophy", title: "Philosophy" },
+      { key: "reviews", title: "Reviews" },
+      { key: "misc", title: "Misc" },
+      { key: "links", title: "Links and Recommendations" },
+      { key: "in-estonian", title: "Essays in Estonian" },
+    ],
+  },
+]
+
 function renderBlogIndex(pages) {
-  const has = (p, tag) => (p.tags || []).includes(tag)
-  const essays = pages.filter((p) => has(p, "essay") && !p.external_url).sort(byDateDesc)
-  const collections = pages.filter((p) => has(p, "collection") && !p.external_url).sort(byDateDesc)
-  const research = pages.filter((p) => has(p, "research")).sort(byDateDesc)
-  const estonian = pages.filter((p) => has(p, "in-estonian")).sort(byDateDesc)
+  const all = BLOG_COLUMNS.flatMap((col) => col.categories)
+  const grouped = new Map(all.map((c) => [c.key, []]))
+  const uncategorized = []
+  for (const p of pages.filter((p) => p.date)) {
+    const known = p.categories.filter((c) => grouped.has(c))
+    if (known.length) known.forEach((c) => grouped.get(c).push(p))
+    else if (!(p.tags || []).includes("paper")) uncategorized.push(p)
+  }
+  if (uncategorized.length) {
+    console.warn(`Uncategorized posts: ${uncategorized.map((p) => p.slug).join(", ")}`)
+  }
+  const columns = BLOG_COLUMNS.map((col) => `<div class="blog-col">
+    <h2 class="blog-col-title">${escapeHtml(col.title)}</h2>
+    ${col.categories.map((c) => renderList(c.title, grouped.get(c.key).sort(byDateDesc), { external: true, note: c.note })).join("\n    ")}
+  </div>`).join("\n  ")
   const body = `
 <div class="blog-grid">
-  <div class="blog-col">
-    ${renderList("Essays", essays)}
-    ${renderList("Collections", collections)}
-  </div>
-  <div class="blog-col">
-    ${renderList("AI Safety Research Posts", research, { external: true })}
-    ${renderList("Essays in Estonian", estonian, { external: true })}
-  </div>
+  ${columns}
 </div>`
   return layout({ title: "Blog", body, slug: "blog" })
 }

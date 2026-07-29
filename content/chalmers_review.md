@@ -2,6 +2,11 @@
 title: "Review: The Conscious Mind"
 draft: false
 date: 2025-04-10
+notes: ""
+spotlight: true
+category:
+  - reviews
+  - philosophy
 tags:
   - review
   - essay

@@ -2,6 +2,8 @@
 title: "Are people getting happier over time? (draft)"
 draft: false
 date: 2025-11-20
+notes: ""
+category: misc
 tags:
   - review
   - essay

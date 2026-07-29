@@ -8,6 +8,7 @@
   --tertiary: #7c6f5e;
   --highlight: rgba(37, 99, 168, 0.08);
   --text-highlight: #fef3c7;
+  --post-link: #5b9bd5;
 
   --font-header: "Schibsted Grotesk", system-ui, -apple-system, sans-serif;
   --font-body: "Source Sans Pro", system-ui, -apple-system, sans-serif;
@@ -24,6 +25,7 @@ html[data-theme="dark"] {
   --tertiary: #a8a29e;
   --highlight: rgba(91, 155, 213, 0.1);
   --text-highlight: #44403c;
+  --post-link: #7fbbe8;
 }
 
 * { box-sizing: border-box; }
@@ -74,7 +76,8 @@ hr { border: 0; border-top: 1px solid var(--lightgray); margin: 2rem 0; }
 .site-title {
   font-family: var(--font-header);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.015em;
   color: var(--dark);
 }
 .site-title:hover { text-decoration: none; color: var(--secondary); }
@@ -213,10 +216,18 @@ main.home {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 5rem;
 }
 @media (max-width: 720px) {
   .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+.blog-col-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--lightgray);
+  letter-spacing: -0.015em;
 }
 
 /* about */
@@ -252,9 +263,9 @@ main.home {
   line-height: 1.35;
   margin-bottom: 0.25rem;
 }
-.paper-title a { color: var(--dark); }
-.paper-title a:hover { color: var(--secondary); text-decoration: none; }
-.paper-title a.external::after { content: " ↗"; font-size: 0.8em; color: var(--gray); }
+.paper-title a { color: var(--secondary); }
+.paper-title a:hover { color: var(--post-link); text-decoration: none; }
+.paper-title a.external::after { content: "\00a0↗"; font-size: 0.8em; color: var(--gray); }
 .paper-authors {
   font-size: 0.92rem;
   color: var(--darkgray);
@@ -282,6 +293,20 @@ main.home {
   margin: 0 0 1rem;
   letter-spacing: -0.01em;
 }
+/* On the home page the section headings are top-level, so they match the size of the
+   blog page's column headings. */
+main.home .papers h2,
+main.home .post-list h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.25rem;
+}
+.post-list .section-note {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin: -0.7rem 0 0.9rem;
+}
 .post-list ul { list-style: none; padding: 0; margin: 0; }
 .post-list li {
   display: flex;
@@ -294,12 +319,16 @@ main.home {
   color: var(--gray);
 }
 .post-list a {
-  color: var(--dark);
+  color: var(--secondary);
   font-size: 1rem;
 }
-.post-list a:hover { color: var(--secondary); text-decoration: none; }
+.post-list .note {
+  font-size: 0.82rem;
+  color: var(--gray);
+}
+.post-list a:hover { color: var(--post-link); text-decoration: none; }
 .post-list a.external::after {
-  content: " ↗";
+  content: "\00a0↗";
   font-size: 0.8em;
   color: var(--gray);
 }
@@ -310,6 +339,7 @@ main.home {
 
 /* post */
 .post-header { margin-bottom: 2rem; }
+.post-note { color: var(--gray); font-size: 0.9rem; margin: 0.35rem 0 0; }
 .post-meta { color: var(--gray); font-size: 0.9rem; margin: 0.25rem 0 0; }
 .post-meta .tag {
   display: inline-block;

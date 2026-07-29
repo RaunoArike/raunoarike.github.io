@@ -2,6 +2,8 @@
 title: "Review: The Better Angels of Our Nature (draft)"
 draft: false
 date: 2025-07-27
+notes: ""
+category: reviews
 tags:
   - review
   - essay

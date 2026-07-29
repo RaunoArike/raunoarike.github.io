@@ -2,6 +2,8 @@
 title: Does the Entropy of the Universe Always Increase? (draft)
 draft: false
 date: 2025-06-25
+notes: ""
+category: misc
 tags:
   - physics
   - essay

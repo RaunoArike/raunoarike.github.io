@@ -2,10 +2,59 @@
 title: "My views on consciousness"
 draft: true
 date: 2025-11-20
+notes: ""
+category: philosophy
 tags:
   - essay
   - philosophy
 ---
+
+First, a framework for thinking about consciousness. I've covered [Chalmers's taxonomy of consciousness](chalmers_review.md) in the past, but over time, I've come to dislike all taxonomies I've seen so far. Below is my attempt to properly categorize theories of consciousness with three tables, the first one describing the two most important axes of disagreement, the second one zooming in and making those axes more granular, and the third one summarizing the commitments that each of the views across those axes make.
+
+
+| Gap stance | Substrate-independent | Substrate-dependent |
+|---|---|---|
+| No epistemic gap — $P \vdash_{\text{a priori}} Q$ | Computational functionalism / illusionism | — (unoccupied) |
+| Epistemic gap, no metaphysical gap — $P \nvdash_{\text{a priori}} Q$, $\Box_{\text{met}}(P \to Q)$ | A posteriori physicalism (functionalist about realization) | Type-identity theory; structural/field identity (cube_flipper) |
+| Both gaps — $\Diamond_{\text{met}}(P \wedge \neg Q)$ | Property dualism / Russellian monism with organizational invariance (Chalmers) | Interactionist dualism (Descartes); micropsychism; IIT |
+
+
+
+| Gap stance | Substrate-independent | Substrate-dependent |
+|---|---|---|
+| **Type-A** — no gaps ($P \vdash_{\text{a priori}} Q$) | Computational functionalism; illusionism | — (unoccupied: nothing for the substrate to fix) |
+| **Type-B** — epistemic gap only ($P \nvdash_{\text{a priori}} Q$, $\Box_{\text{met}}(P \to Q)$) | A posteriori physicalism, functionalist about realization (phenomenal-concepts strategy) | Classical type-identity theory; structural/field identity (cube_flipper) |
+| **Type-D** — both gaps ($\Diamond_{\text{met}}(P \wedge \neg Q)$); causally efficacious | — (rare: organizationally-invariant interactionism) | Interactionist property dualism; substance dualism (Descartes); quantum-collapse theories |
+| **Type-E** — both gaps ($\Diamond_{\text{met}}(P \wedge \neg Q)$); causally inert | Epiphenomenalist property dualism — Chalmers's naturalistic dualism (he takes E seriously); classical epiphenomenalism | — (rare: inert qualia tied to a specific substrate) |
+| **Type-F** — both gaps ($\Diamond_{\text{met}}(P \wedge \neg Q)$); intrinsic nature | Constitutive Russellian monism with organizational invariance (Chalmers's lean) | Micropsychism / micro-Russellian monism; IIT |
+
+
+
+| Gap stance | Substrate-independent | Substrate-dependent |
+|---|---|---|
+| **Type-A** | Mary learns no new fact (at most know-how); zombies not conceivable on reflection; no hard problem, only the meta-problem; a functional isomorph, incl. a digital WBE, is conscious identically | — (unoccupied: with no phenomenal fact, there is nothing for the substrate to fix) |
+| **Type-B** | Mary gains a new concept but no new fact; zombies conceivable yet metaphysically impossible; the psychophysical link is necessary a posteriori (water = H2O model); multiply realizable, so a functional isomorph is conscious identically | Mary gains a new concept but no new fact; zombies conceivable yet metaphysically impossible; but consciousness is identical to a specific physical structure (e.g. gauge-invariant EM-field topology), so a digital WBE's experience diverges |
+| **Type-D** | (rare) | Mary learns a new fact; zombies metaphysically possible; consciousness is nonphysical and causally efficacious; rejects the causal closure of physics; tied to specific physical mechanisms |
+| **Type-E** | Mary learns a new fact; zombies metaphysically possible; consciousness is nonphysical and causally inert; consciousness does not cause our reports about it; qualia hung on functional states by law, so organizational invariance holds | (rare) |
+| **Type-F** | Mary learns a new fact; zombie possibility is subtle (depends on holding the protophenomenal base fixed); consciousness is the intrinsic nature grounding physical structure; physics gives only structure and dynamics; faces the combination problem; organization fixes which experience occurs | Mary learns a new fact; consciousness is the intrinsic nature of specific micro-stuff (or a system's integrated-information structure); faces the combination problem; equal functional organization on a new substrate changes or eliminates experience |
+
+
+
+### Table 4 — Detailed taxonomy (proponents, per Chalmers 2002/2003)
+
+| Gap stance | Substrate-independent | Substrate-dependent |
+|---|---|---|
+| **Type-A** (no gaps) | Daniel Dennett; Fred Dretske; Gilbert Harman; David Lewis; Georges Rey; Gilbert Ryle (Carnap as logical-behaviorism root) | — (unoccupied) |
+| **Type-B** (epistemic gap only) | Ned Block & Robert Stalnaker; Christopher Hill; Joseph Levine; Brian Loar; William Lycan; David Papineau; John Perry; Michael Tye; Peter Carruthers | U. T. Place & J. J. C. Smart (classical identity theory); cube_flipper (structural/field identity) |
+| **Type-D** (both gaps; causally efficacious) | — (rare) | René Descartes; John Foster; David Hodgson; Karl Popper & John Eccles; Wilfrid Sellars; Henry Stapp; Richard Swinburne; Eugene Wigner |
+| **Type-E** (both gaps; causally inert) | Keith Campbell; Thomas Huxley; Frank Jackson (1982; later recanted); William Robinson; David Chalmers (naturalistic property dualism) | — (rare) |
+| **Type-F** (both gaps; intrinsic nature) | David Chalmers (his lean; organization-respecting) | Bertrand Russell; Herbert Feigl; Grover Maxwell; Michael Lockwood; David Ray Griffin; Galen Strawson; Daniel Stoljar; Colin McGinn |
+
+
+---
+
+[Jessica Taylor](https://www.lesswrong.com/posts/zPz4Tc2JeB5FjsC7m/powerful-qualities-in-type-b-physicalism): "To my mind, the most important views are the five: analytic functionalism, type B physicalism, strong illusionism, property dualism, and Russellian monism." Does my table properly distinguish between analytic functionalism, type B physicalism, and strong illusionism?
+
 
 Things to talk about:
 - Rafael Harth's two camps
@@ -191,6 +240,7 @@ If the hypothesis is indeed true, it would imply that consciousness isn't necess
 To add:
 - Nora's argument
 - https://www.lesswrong.com/posts/3LcyoqNTJuCZ65MbL/mo-putera-s-shortform?commentId=XcggpDPPLyCB6qa9y
+- https://philipgoff.substack.com/p/you-cant-be-both-a-qualia-realist
 
 [^1]: Functionalism is ... Physicalism is ...
 

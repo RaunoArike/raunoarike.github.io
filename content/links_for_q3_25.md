@@ -2,6 +2,8 @@
 title: Links for Q3 2025
 draft: false
 date: 2025-09-30
+notes: ""
+category: links
 tags:
   - collection
   - links

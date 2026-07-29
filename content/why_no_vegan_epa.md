@@ -2,6 +2,8 @@
 title: Why are there no good algae-based EPA supplements?
 draft: true
 date: 2025-11-09
+notes: ""
+category: misc
 tags:
   - animal-welfare
   - essay

@@ -2,6 +2,8 @@
 title: Links for Q1 2026
 draft: true
 date: 2026-03-29
+notes: ""
+category: links
 tags:
   - collection
   - links
@@ -24,7 +26,7 @@ Ben Kuhn,
 Marks et al., [The Persona Selection Model](https://alignment.anthropic.com/2026/psm/). I didn't read this post in great detail, as I got the impression that they're rehashing arguments I've been familiar with for a while. However, if you're a reader who hasn't been following the AI safety space for years, this post is probably *the* post to read to understand why it's useful to model LLMs as ... Relatedly, there has been a bunch of recent discussion on personas in general and the following posts are also worth reading:
 - Riche et al., [Shaping the exploration of the motivation-space matters for AI safety](https://www.lesswrong.com/posts/rhFXyfFSRKp3cX4Y9/shaping-the-exploration-of-the-motivation-space-matters-for)
 - nielsrolf et al., [Concrete research ideas on AI personas](https://www.lesswrong.com/posts/JbaxykuodLi7ApBKP/concrete-research-ideas-on-ai-personas)
-- Bostock, [I'm Bearish On Personas For ASI Safety](https://www.lesswrong.com/posts/fMgE3E54PdDcZhvm6/i-m-bearish-on-personas-for-asi-safety)
+- J Bostock, [I'm Bearish On Personas For ASI Safety](https://www.lesswrong.com/posts/fMgE3E54PdDcZhvm6/i-m-bearish-on-personas-for-asi-safety)
 
 Another topic I thought a lot about this quarter is continual learning. Here's an assortment of posts that I found particularly valuable; a sequence talking about these posts and many other
 

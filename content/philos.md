@@ -2,6 +2,8 @@
 title: "Why philosophers should care about LLMs"
 draft: true
 date: 2025-11-20
+notes: ""
+category: philosophy
 tags:
   - essay
   - philosophy

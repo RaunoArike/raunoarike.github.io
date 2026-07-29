@@ -2,6 +2,8 @@
 title: "Explaining the Hole Argument"
 draft: true
 date: 2026-01-01
+notes: ""
+category: misc
 tags:
   - essay
   - physics

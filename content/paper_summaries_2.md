@@ -2,6 +2,8 @@
 title: Paper Summaries 2
 draft: false
 date: 2025-11-19
+notes: ""
+category: ai-safety
 tags:
   - collection
 ---

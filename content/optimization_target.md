@@ -2,6 +2,8 @@
 title: Can Reward Be the Optimization Target of an LLM?
 draft: false
 date: 2024-12-17
+notes: ""
+category: ai-safety
 tags:
   - ai
   - research

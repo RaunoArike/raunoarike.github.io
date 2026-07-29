@@ -2,6 +2,8 @@
 title: Book and Essay Recommendations
 draft: false
 date: 2025-06-25
+notes: ""
+category: links
 tags:
   - collection
 ---

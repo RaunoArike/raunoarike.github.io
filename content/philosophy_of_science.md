@@ -2,6 +2,8 @@
 title: "Kuhn, Popper, Yudkowsky, and Deutsch on Philosophy of Science (draft)"
 draft: true
 date: 2024-10-30
+notes: ""
+category: philosophy
 tags:
   - essay
   - philosophy

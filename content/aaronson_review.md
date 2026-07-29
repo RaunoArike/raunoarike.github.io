@@ -2,6 +2,9 @@
 title: "Review: Quantum Computing Since Democritus"
 draft: false
 date: 2025-04-11
+notes: ""
+spotlight: true
+category: reviews
 tags:
   - review
   - essay

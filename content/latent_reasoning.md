@@ -2,6 +2,9 @@
 title: On Recent Results in LLM Latent Reasoning
 draft: false
 date: 2025-03-31
+notes: ""
+spotlight: true
+category: cot-monitoring
 tags:
   - ai
   - research
