@@ -287,12 +287,12 @@ const TALKS = [
   {
     url: "https://www.youtube.com/watch?v=erqRvkM21mg",
     title: "AI Safety Thursdays: Implications of Continual Learning in LLM Agents",
-    note: "together with Rohan Subramani",
+    note: "with Rohan Subramani",
   },
   {
     url: "https://www.youtube.com/watch?v=39XJfbzBWPo",
     title: "AI Safety Thursdays: Chain-of-Thought Monitoring and AI Control",
-    note: "together with Rohan Subramani",
+    note: "with Rohan Subramani",
   },
   {
     url: "https://www.youtube.com/watch?v=fLHtPUaXH8E",
@@ -303,7 +303,7 @@ const TALKS = [
 function renderTalks(talks) {
   if (!talks.length) return ""
   const lis = talks.map((t) => `<li>
-    <a href="${escapeHtml(t.url)}" target="_blank" rel="noopener noreferrer" class="external">${escapeHtml(t.title)}</a>${t.note ? ` <span class="talk-note">(${escapeHtml(t.note)})</span>` : ""}
+    <a href="${escapeHtml(t.url)}" target="_blank" rel="noopener noreferrer" class="external">${escapeHtml(t.title)}</a>${t.note ? ` <span class="talk-note">${escapeHtml(t.note)}</span>` : ""}
   </li>`).join("\n")
   return `<section class="post-list">
     <h2>Talks</h2>
